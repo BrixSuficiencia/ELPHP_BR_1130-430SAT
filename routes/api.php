@@ -29,7 +29,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     // Admin-only routes
     Route::middleware('role:admin')->group(function () {
         Route::get('/users', [UserController::class, 'index'])->name('users.index');
-        Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+        Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show'); //remove
         Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
     });
 
@@ -43,14 +43,14 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::middleware(['auth:sanctum'])->group(function () {
     // Public routes
     Route::get('/vehicles', [VehicleController::class, 'index'])->name('vehicles.index');
-    Route::get('/vehicles/{id}', [VehicleController::class, 'show'])->name('vehicles.show');
+    Route::get('/vehicles/{id}', [VehicleController::class, 'show'])->name('vehicles.show'); //remove
 
     // Owner-only routes
     Route::middleware('role:owner')->group(function () {
         Route::post('/vehicles', [VehicleController::class, 'store'])->name('vehicles.store');
         Route::put('/vehicles/{id}', [VehicleController::class, 'update'])->name('vehicles.update');
         Route::delete('/vehicles/{id}', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
-        Route::get('/owner/vehicles', [VehicleController::class, 'getOwnerVehicles'])->name('vehicles.owner');
+        Route::get('/owner/vehicles', [VehicleController::class, 'getOwnerVehicles'])->name('vehicles.owner'); //remove
     });
 });
 
@@ -64,18 +64,18 @@ Route::middleware(['auth:sanctum'])->group(function () {
     });
 
     // General booking routes
-    Route::get('/bookings/{id}', [BookingController::class, 'show'])->name('bookings.show');
+    Route::get('/bookings/{id}', [BookingController::class, 'show'])->name('bookings.show'); //remove
 
     // Renter-only routes
     Route::middleware('role:renter')->group(function () {
         Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
         Route::put('/bookings/{id}', [BookingController::class, 'update'])->name('bookings.update');
         Route::delete('/bookings/{id}', [BookingController::class, 'destroy'])->name('bookings.destroy');
-        Route::get('/renter/bookings', [BookingController::class, 'getRenterBookings'])->name('bookings.renter');
+        Route::get('/renter/bookings', [BookingController::class, 'getRenterBookings'])->name('bookings.renter'); //remove
     });
 
     // Owner-only routes
     Route::middleware('role:owner')->group(function () {
-        Route::get('/owner/bookings', [BookingController::class, 'getOwnerBookings'])->name('bookings.owner');
+        Route::get('/owner/bookings', [BookingController::class, 'getOwnerBookings'])->name('bookings.owner'); //remove
     });
 });
