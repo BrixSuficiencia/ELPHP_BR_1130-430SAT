@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('fuel_type');
             $table->decimal('price_per_day', 8, 2);
             $table->string('location');
-            $table->string('image_url'); // Store Cloudinary link
+            $table->string('image_url');
             $table->timestamps();
         });
     }
