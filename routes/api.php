@@ -79,3 +79,31 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/owner/bookings', [BookingController::class, 'getOwnerBookings'])->name('bookings.owner'); //remove
     });
 });
+
+//Authentication Routes
+//-Login
+//-Logout
+//-Signup
+//
+//User Routes
+//-Get all Users
+//-Update User
+//-Delete User
+//
+//Vehicle Routes
+//-Get all Vehicles
+//-Add Vehicle
+//-Update Vehicle
+//-Delete Vehicle
+//
+//Booking Routes
+//-Get all Bookings
+//-Add Bookings
+//-Update Bookings
+//-Delete Bookings
+//
+//Review Routes
+//-Get Review
+//-Add Review
+//-Update Review
+//-Delete Review
